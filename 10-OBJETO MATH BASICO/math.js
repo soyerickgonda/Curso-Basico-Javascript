@@ -1,4 +1,4 @@
-//METODOS
+ //METODOS
 /*Los objetos Math son objetos incorporados que proporcionan un conjunto de 
 funciones y constantes matemáticas para realizar operaciones matemáticas comunes. 
 Estas funciones y constantes son útiles cuando necesitas realizar cálculos matemáticos
