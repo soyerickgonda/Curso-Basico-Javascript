@@ -1,21 +1,79 @@
 /*Definicion:
-La POO en JS es una forma de escribir codigo que se basa en la idea de que los objetos son la unidad central de la programacion.
+La POO en JS es un estilo de programacion muy utilizado en donde creas y utilizas estructuras de datos muy 
+similar a la vida real.
+La POO es una forma de agrupar las variables, constantes y funciones, para que sea sencillo
+entender, modificar y ampliar.(a esta agrupacion se le llama 'Class' o Clase en español)
 
-Conceptos Básicos de POO:
+NOTA:Las variables y constantes incluidas en un 'class' se denonima 'Propiedades' y guardan informacion 
+relacionada a la clase. Por otro lado las 'funciones' incluidas en un 'class' se denominan 'Metodos' y estas 
+realizan una accion relacionada a class. 
 
-1) Objetos: Es un contenedor que puede almecenar 'Propiedades'(datos) y 'Metodos'(funciones).
-2) Clases (class): Son como plantillas que se usan para crear Objetos. Estos definen como deben ser los objetos, que propiedades y metodos deben tener.
-3) Propiedades: Son variables que pertenecen al objeto y almacenan informacion especifica.
-    ejm: Un 'carro' seria un Objeto y sus Propiedades serian: 'color', 'marca', 'modelo'.
+ejm:
+    class Animal {
+        //Propiedades
+        nombre = "Tom";
+        tipo = "Gato"
+        
+        //Metodo
+          hablar() {
+                return "Odio los lunes."}
+    }
 
-4) Constructor(): Sirve para inicializar y configurar objetos cuando se crean a partir de una clase. (instancia). 
+CONCEPTOS BASICOS DE LA POO:
+
+1) Class: Es una forma de organizar codigo de forma entendible con la finalidad de simplificar el funcionamiento
+de nuestro programa. Las 'clases' son como plantillas que se usan para crear Objetos. Estos definen como deben 
+ser los objetos, que propiedades y metodos deben tener.
+
+2) Constructor(): Sirve para inicializar y configurar objetos cuando se crean a partir de una clase. (instancia). 
                   Permite establecer los valores iniciales de las propiedades de un objeto.
                   Nota: El constructor es esencial para configurar objetos correctamente cuando se crean. 
 
-5) Metodos: Son funciones que estan asociados a un Objeto y pueden realizar acciones especificas relacionadas a ese Objeto.
-    ejm: objeto: 'carro' ; metodo: 'arrancar'
+2.1) this.: Esta palabra clave de utiliza dentro de la 'Clase' para referencia al 'objeto instanciado'(para ser
+    mas preciso, a la variable que usamos al instanciar)
+        ejem:
+            class Animal {
+                constructor(name,raza,edad) {
+                this.name = name;   
+            }}                      //el this. hace referencia a perro (es como si dijese this.perro)
+            ......
+            const perro = new Animal(nombreDelPerro,raza,edad)
 
-6) Instancias: Se le llama 'instanciar' cuando creas un Objeto a partir de una Clase 'class'. Cada instancia es un Objeto independiente con sus propias 'propiedades' y 'métodos'.
+3) Propiedades: Son variables que se definen a traves del constructor mediante la palabra clave this.
+    ejm: 
+    class Auto {
+        constructor (){             //el metodo constructor se ejecuta cuando se instancia.
+            this.marca;
+            this.modelo;
+            this.año;
+        }
+    }
+
+4) Metodos: Son funciones que estan asociados a un Objeto y pueden realizar acciones especificas relacionadas a ese Objeto.
+    ejm: objeto: 'carro' ; metodo: 'arrancar'
+    NOTA: Recuerda que las 'Propiedades' y 'Metodos' van dentro de Class.
+
+5) Instancias: Se le llama 'instanciar' cuando creas un Objeto a partir de una 'class'. Cada instancia es un 
+Objeto independiente con sus 'propiedades' y 'métodos'.(su sintaxis es: new NombreDeLaClase('Aca van los parametros'))
+ejem:
+    // Declaración de una clase (de momento, vacía)
+    class Animal {}
+
+    // Crear (instanciar) un objeto basada de la clase Animal
+    const pato = new Animal();
+
+6) Objetos: Es el elemento final que se basa en la 'clase'. Este puede almecenar 'Propiedades'(datos) y 'Metodos'
+(funciones).
+    ejm: 
+    class Auto {
+        constructor (){             //el metodo constructor se ejecuta cuando se instancia.
+            this.marca;
+            this.modelo;
+            this.año;
+        }
+    }
+    const auto1 = new Auto(marca,modelo,año) //instancia (u Objeto creado)
+
 7) Encapsulamiento: En POO, puedes encapsular los datos (propiedades y métodos) para que no sean accesibles desde fuera 
                     del objeto. Esto se hace para proteger la integridad de los datos y controlar el acceso.
 8) Polimorfismo: Es la capacidad que tienen los objetos de comportarse de una manera diferente si le ponemos el mismo metodo o funcion.
