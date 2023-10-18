@@ -69,6 +69,7 @@ let y = 0;
 for(let d = 5; d > y; d--) {
     console.log(d)
 }
+
 /*FOR EACH:
 Se utiliza para iterar sobre los elementos de un Array y ejecuta una funcion para cada elemento de Array. 
 No crea un nuevo array, simplemente itera sobre el array original y aplica la funcion a cada elemento.
@@ -143,7 +144,7 @@ sintaxis:
 const miArray = [1, 2, 3, 4, 5];
 
 // const newArray = miArray.filter(function(elemento) { //aplicamos funcion normal dentro del filter
-//   return elemento % 2 === 0; // Filtra cada elemento y devolvera los números pares
+//   console.log(elemento % 2 === 0); // false,true,false,true,false
 // });
 
 //otra forma de resolver el ejm 1:
@@ -153,8 +154,7 @@ const newArray = miArray.filter(elemento => { //aplicamos funcion flecha dentro 
   }                                                   // Los numeros pares son: 4
 })
 
-/*MAP(): Se utiliza para crear un nuevo array con los resultados de aplicar una funcion a cada elemento del array original.
-
+/*MAP(): Se utiliza para recorrer los elementos de un array, se aplica una funcion a cada uno de los elementos del array original y retorna un nuevo array con los resultados.
 sintaxis:
         const nuevoArray = array.map(function(elemento, indice, arreglo) {
             // Devuelve el nuevo valor para el elemento

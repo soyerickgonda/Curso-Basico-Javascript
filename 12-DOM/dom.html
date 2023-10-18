@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
-    <link rel="stylesheet" href="dom.css">
-</head>
-<body>
+    <link rel="stylesheet" href="dom.css" />
+  </head>
+  <body>
     <h1 class="titulo">Aprendiendo JavaScript con Dalto</h1>
     <h2 class="subtitulo">Document Model Object</h2>
 
+    <!-- getElementById -->
+    <p id="parrafo1">soy un id con parrafo 1</p>
+    <p id="parrafo2">soy un id con parrafo 2</p>
+
+    <!-- getElementsByClassName -->
     <p class="parrafo">soy una clase con parrafo 1</p>
     <p class="parrafo">soy una clase con parrafo 2</p>
-    <p id="parrafo1">soy un id con parrafo 1</p>
-    <p id="parrafo2">soy un id con parrafo 2</p> 
 
-    <div id="uno">
-        soy un div vacio
-    </div>
-    <input id="input1" placeholder="cambio el valor del atributo type">
-    <input id="input2" placeholder="obtengo el valor del atributo de la propiedad id">
-    <input id="input3" placeholder="elimino el valor del atributo de la propeidad id">
-    
+    <!-- getElementsByTagName -->
+    <div>soy un div vacio</div>
+    <div>soy un div vacio</div>
+   
+    <!-- getElementsByName -->
+    <form>
+      <input type="text" name="primerNombre" value="John" />
+      <input type="text" name="segundoNombre" value="Doe" />
+      <input type="text" name="apellido" value="Smith" />
+    </form>  
+
+    <!-- querySelector-->
+    <p id="paragraphId">soy un id con parrafo 1</p>
+    <p class="parrafo4">soy un id con parrafo 2</p>
+
+    <!-- querySelectorAll-->
+    <ul>
+      <li class="lista">animal</li>
+      <li class="lista">fruta</li>
+      <li class="lista">juguete</li>
+    </ul>
 
 
+    <!-- METODOS PARA DEFINIR, OBTENER Y ELIMINAR VALORES DE ATRIBUTOS -->
+    <form>
+      <input id="input1" alt="soy-un-input" placeholder="asigno el valor al atributo type" />
+      <input id="input2" alt="soy-un-input" placeholder="obtengo el valor del atributo de la propiedad id"/>
+      <input class="input3" alt="soy-un-input" placeholder="elimino el valor del atributo de la propeidad id"/>
+  </form>
 
 
 
@@ -32,5 +55,5 @@
 
 
     <script src="../12-DOM/dom.js"></script>
-</body>
+  </body>
 </html>
