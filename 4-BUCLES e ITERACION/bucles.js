@@ -1,4 +1,4 @@
-//Recuerda: El while, Do While, For, For in, For off, todos son 'Sentencias de Control de Flujo'
+//Recuerda: El while, Do While, For, For in, For off, For Each todos son 'Sentencias de Control de Flujo'
 /*
 Definicion:
 *BUCLE:Es como un "ciclo" en el que se ejecuta una tarea varias veces de manera automatica.
@@ -70,38 +70,6 @@ for(let d = 5; d > y; d--) {
     console.log(d)
 }
 
-/*FOR EACH:
-Se utiliza para iterar sobre los elementos de un Array y ejecuta una funcion para cada elemento de Array. 
-No crea un nuevo array, simplemente itera sobre el array original y aplica la funcion a cada elemento.
-Este método es útil cuando deseas operar en cada elemento del arreglo, como imprimirlos, modificarlos o realizar cálculos basados en los valores del array.
-
-La sintaxis es la sgte:
-                          //argumentos de la funcion
-  array.forEach(function(elemento, indice, arreglo) 
-  {
-    // Código para trabajar con cada elemento
-  }); */
-
-//ejemplo 1:
-const frutas = ["Manzana", "Banana", "Cereza"]; //primero se declara la variable (array)
-
-frutas.forEach(function(fruta, indice) { //recorrera el valor y el indice de cada elemento del array.
-
-  console.log(`Índice ${indice}: ${fruta}`);  //Índice 0: Manzana
-                                              //Índice 1: Banana
-                                              //Índice 2: Cereza
-});
-
-//ejemplo 2: forEach realiza modificacion y calculo con los valores del Array
-let numeros = [1,2,3,4,5]; //array original
-let resultadoFinal = []; //array vacio que almacenara los valores modificados del Array original
-
-numeros.forEach(function(valores){
-  nuevoValor = valores + 1;
-  resultadoFinal.push(nuevoValor)
-})
-console.log(resultadoFinal); //[2, 3, 4, 5, 6]
-
 /*FOR IN:
 En un Array: Recorre los indices (ó posiciones) de los elementos que lo conforman.
 En un Objeto: Recorre las propiedades de un objeto e itera sobre las claves de esta (recuerda que un objeto esta formado por pares de clave:valor)
@@ -132,38 +100,3 @@ for (let libro of libros2) {
   console.log(libro); //Harry Potter, El Señor de los Anillos, Cien Años de Soledad...muestra el valor de cada uno de los indices
 }
 //Nota: 'for of' no se usa para Object ya que solo recorre valores de estructuras de datos iterables como el array o string
-
-/*FILTER(): Se utiliza para crear un nuevo array con todos los elementos que cumplan una condicion especificada en una funcion de filtrado.
-
-sintaxis: 
-      const nuevoArray = array.filter(function(elemento, indice, arreglo) {
-        // Devuelve true para incluir el elemento en el nuevo array, false para omitirlo
-      });
-*/
-//ejm 1:
-const miArray = [1, 2, 3, 4, 5];
-
-// const newArray = miArray.filter(function(elemento) { //aplicamos funcion normal dentro del filter
-//   console.log(elemento % 2 === 0); // false,true,false,true,false
-// });
-
-//otra forma de resolver el ejm 1:
-const newArray = miArray.filter(elemento => { //aplicamos funcion flecha dentro del filter
-  if (elemento % 2 === 0 ) {
-    console.log(`Los numeros pares son: ` + elemento) // Los numeros pares son: 2
-  }                                                   // Los numeros pares son: 4
-})
-
-/*MAP(): Se utiliza para recorrer los elementos de un array, se aplica una funcion a cada uno de los elementos del array original y retorna un nuevo array con los resultados.
-sintaxis:
-        const nuevoArray = array.map(function(elemento, indice, arreglo) {
-            // Devuelve el nuevo valor para el elemento
-        });
-*/
-//ejm 1:
-const miArray2 = [1, 2, 3, 4, 5];
-
-const newArray2 = miArray.map(function(elemento) {
-  return elemento * 2; //cada elemento se multiplicara por 2
-});
-console.log(newArray2); //[2, 4, 6, 8, 10]

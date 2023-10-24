@@ -45,17 +45,36 @@ let animals = ["perro","gato","loro","raton","conejo","tigre"];
 animals.sort();
 console.log(animals); //['conejo', 'gato', 'loro', 'perro', 'raton', 'tigre']..ordenado alfabeticamente
 
-//splice: Cambia el contenido de un array pudiendo 'eliminar elementos' existentes y/o 'agregar' unos nuevos.
+//splice(): Cambia el contenido de un array pudiendo 'eliminar elementos' existentes y/o 'agregar' unos nuevos.
 let frutas2 = ["manzana","papaya","papa","brocoli","lechuga"];
 console.log(`El array de frutas era asi: ` + frutas2)
-frutas2.splice(2,4,"mandarina","fresa","arandanos");//arrancamos desde la posicion 2 y borramos hasta la posicion 4 yañadimos 3 elementos nuevos
+frutas2.splice(2,4,"mandarina","fresa","arandanos");//arrancamos desde la posicion 2 y borramos hasta la posicion 4 
+                                                    //y añadimos 3 elementos nuevos
 console.log(`El array de frutas modificaco quedaria asi: ` + frutas2); //['manzana', 'papaya', 'mandarina', 'fresa', 'arandanos']
 /*Recuerda: 
 -No es necesario eliminar elementos cuando uses splice().
 -Los elementos que se añadan iran segun la posicion que indiquemos.*/
 
+//every():Sirve para evaluar si todos los elementos de un array cumplen una misma condición. Si se cumpliera retornara TRUE, caso contrario FALSE
+//falta ejm
+
+/*reduce(): es un método de array que se utiliza para reducir (acumular) todos los elementos del array a un solo valor.
+Toma una funcion como argumento que se ejecuta en cada elemento del array. Esta funcion toma 2 argumentos: el acumulador(donde se almacena el resultado parcial)
+y el elemento actual que se esta procesando. El resultado final se obtiene despues de aplicar la funcion a todo los elementos del array 
+::Nota::Este método es ideal para sumar, restar, multiplicar, dividir, etc los elementos numericos de un array.
+ejm:*/
+const arrayDeNumeros = [1,2,3,4,5];
+const sumarElementos = arrayDeNumeros.reduce((acumulador,elemento) => acumulador + elemento, 0);
+console.log(acumulador);
+console.log(elemento);
+console.log(sumarElementos); //15...es la sumatoria de todo los numeros dentro del array
 
 //ACCESORES
+
+//split(): Convierte un String en Array. Deberas especificar entre parentesis el caracter separador entre cada elemento("," ";" "/", etc)
+let string = "hola mundo";
+let convertirAarray = string.split("/");
+console.log(convertirAarray);
 
 //join(): Convierte los elementos de un array en un string, separados por el separador que querramos.
 const miArray5 = [1, 2, 3];
@@ -65,6 +84,7 @@ console.log(cadena);    //1-2-3
 const miArray6 = ["pera","piña","platano","manzana"]
 const cadena2 = miArray6.join('/');
 console.log(cadena2);   //pera/piña/platano/manzana
+
 
 /*slice(): Devuelve una copia superficial de una porción de un array, especificada por un rango de índices.
 -Si ponemos slice(posicionInicial,posicionFinal), se mostraran los elementos desde la posicionInicial hasta una posicion antes de la posicionFinal.
@@ -93,36 +113,93 @@ array.lastIndexOf("pera")//4 ...el elemento 'pera' esta en el indice 1 y 4, pero
 
 //DE REPETICION
 //filter(): Crea un nuevo array con todos los elementos que cumplen una condición especificada en una función de retorno (callback).
+//ejm 1:
 let numeros = [1, 2, 3, 4, 5, 6]; //extraere los nros pares
 let resultado = numeros.filter(extraerNumero => extraerNumero % 2 === 0);
 console.log(resultado) //2 4 6 
 
+//ejm 2:
+const numerosEnArray = [1, 2, 3, 4, 5];
+
+const newArray = numerosEnArray.filter(function(elemento) { //aplicamos funcion normal dentro del filter
+  console.log(elemento % 2 === 0); // false,true,false,true,false
+});
+
+//ejm3:
+const numbersArray = [1, 2, 3, 4, 5];
+const nuevoArray = numbersArray.filter(elemento => { //aplicamos funcion flecha dentro del filter
+  if (elemento % 2 === 0 ) {
+    console.log(`Los numeros pares son: ` + elemento) // Los numeros pares son: 2
+  }                                                   // Los numeros pares son: 4
+})
+
+
+/*forEach():Se utiliza para recorrer los elementos de un Array y ejecuta una funcion para cada uno de esos elementos. 
+ojo: No crea un nuevo array, simplemente itera sobre el array original y aplica la funcion a cada elemento.*/
+
+//ejemplo 1:
+const frutas = ["Manzana", "Banana", "Cereza"]; //primero se declara la variable (array)
+
+frutas.forEach(function(fruta, indice) { //recorrera el valor y el indice de cada elemento del array.
+
+  console.log(`Índice ${indice}: ${fruta}`);  //Índice 0: Manzana
+                                              //Índice 1: Banana
+                                              //Índice 2: Cereza
+});
+
+//ejemplo 2: forEach realiza modificacion y calculo con los valores del Array
+let arr  = [1,2,3,4,5]; //array original
+let resultadoFinal = []; //array vacio que almacenara los valores modificados del Array original
+
+numeros.forEach(function(valores){
+  nuevoValor = valores + 1;
+  resultadoFinal.push(nuevoValor)
+})
+console.log(resultadoFinal); //[2, 3, 4, 5, 6]
+
+
+//ejm 3:
 let numeros2 = [1, 2, 3, 4, 5, 6];
 numeros2.forEach(numero => console.log(`usando forEach ` +numero));//imprime todos los valores del array
 
-// numeros2.forEach(function (numero){
-//     if(numero % 2 === 0){
-//         console.log(numero)
-//     }
-// })
 let numeros3 = [1, 2, 3, 4, 5, 6];
 for(numeroPar of numeros3){
     if(numeroPar % 2 === 0){
         console.log(numeroPar)
     }
  }
+//console.log(numeros3); 
 
-    //console.log(numeros3); 
+/*map():Se usa para recorrer los elementos de un array y realiza una accion en cada uno de los elementos. Este metodo 
+crea un nuevo array con los elementos modificados sin alterar el array original.
+
+sintaxis:
+        const nuevoArray = array.map(function(elemento, indice, arreglo) {
+            // Devuelve el nuevo valor para el elemento
+        });         */
+
+//ejm 1:
+const arreglo = [1, 2, 3, 4, 5];
+
+const nuevoArreglo = arreglo.map(function(elemento) {
+  return elemento * 2; //cada elemento se multiplicara por 2
+});
+console.log(nuevoArreglo); //[2, 4, 6, 8, 10]
 
 
-//let edades = [12,14,22,33,32,11,19]; //extraer edades > 18
 
 
-/*forEach():Ejecuta una función de retorno (callback) por cada elemento del array, pero NO crea un nuevo array. Se utiliza 
-principalmente para realizar acciones en cada elemento del array, como imprimirlos en la consola.*/
 
-/*map(): crea un nuevo array con los resultados de aplicar una función de retorno (callback) a cada elemento del array original. 
-Retorna un nuevo array sin modificar el array original.*/
+
+
+
+
+
+
+
+
+
+
 
 
 /* fuentes a revisar mañana:
