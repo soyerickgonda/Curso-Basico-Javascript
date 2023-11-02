@@ -14,6 +14,9 @@ console.log(numero1); //4
 let numero2 = Math.cbrt(125); 
 console.log(numero2); //5
 
+
+
+//explicar como se hallarian el max y min usando spread operato y apply()
 //Math.max():Este método toma uno o más argumentos numéricos y devuelve el valor más grande entre ellos. 
 let maxNumero = Math.max(5, 6, 10, 2, 8);
 console.log(maxNumero); //10
@@ -21,6 +24,18 @@ console.log(maxNumero); //10
 //Math.min():Este método también toma uno o más argumentos numéricos y devuelve el valor más pequeño entre ellos.
 let minNumero = Math.min(5, 6, 10, 2, 8);
 console.log(minNumero); //2
+
+//Math.max y Math.min en arrays
+let numeros =[4,8,12,29,456,97,0]
+let maximo = Math.max(...numeros);
+console.log(maximo);
+
+const numbers = [2,3,5,6,9,8,10];
+console.log(Math.max.apply(null,numbers));
+
+
+
+
 
 /*Math.random(): Esta función devuelve un número decimal pseudoaleatorio en el rango de 0 a 1.*/
 let numero3 = parseInt(Math.random() * 100); //*100 para que el resultado sea entre 0 y 100 enteros

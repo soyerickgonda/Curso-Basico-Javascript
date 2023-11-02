@@ -19,3 +19,11 @@ for(i = 0; i < 10; i++){
     console.log("el valor de numero es " + numero); //12345678910
     console.log(`el valor de numero ${numero} x 2 es = ` + (numero * 2)); //2468101214161820
 }
+
+/*EJERCICIO 4: hacer un bucle que escriba en una página web los encabezamientos desde <H1> hasta <H6> con un texto 
+que ponga "Encabezado de nivel x".*/
+let encabezado = 0;
+for(i=0; i < 6; i++){
+  encabezado = encabezado + 1;
+  document.write(`<h${encabezado}>Encabezado de Nivel ${encabezado}</${encabezado}>`);
+}

@@ -71,3 +71,15 @@ console.log(restar(50,40));     //10
 /*RECUERDA: 
 Las parametros(son variables) declaradas dentro de una funcion y su uso es local (se accede a ella 
 desde dentro de la funcion)*/
+
+//EJERCICIOS CON FUNCIONES
+function tablaDelSeis(numero) {
+  let resultadoDeLaMultiplicacionDe6 = [];
+  for(i=0; i<=10; i++){
+      let resultado = numero * i;
+      resultadoDeLaMultiplicacionDe6.push(resultado);
+  }
+  return resultadoDeLaMultiplicacionDe6;
+}
+let rspta = tablaDelSeis(2);
+console.log(rspta);

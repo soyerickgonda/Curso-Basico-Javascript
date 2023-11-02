@@ -124,11 +124,27 @@ for (let i = 0; i < 20; i++) {
     console.log(number); //2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40
 }
 
-//ejm 2: La variable 'number1' incrementara su valor de 2 en 2 hasta que su valor sea igual o menor a 20.
+//ejm 4: La variable 'number1' incrementara su valor de 2 en 2 hasta que su valor sea igual a 20.
 let number1 = 0;
 for (let i = 0; number1 < 20; i++) {
     number1 = number1 + 2;
     console.log(number1); //2 4 6 8 10 12 14 16 18 20
+}
+
+//ejm 5: Evaluaremos si los valores de un array son todos iguales
+let numeros = [2,2,2];
+let todosiguales = true;
+
+for(i=1; i < numeros.length; i++){
+  if(numeros[i] !== numeros[0]){
+    todosiguales = false;
+    break;
+  }
+}
+if(todosiguales){
+console.log(true);
+} else {
+  console.log(false)
 }
 
 
@@ -159,7 +175,7 @@ for (usuario in persona) {
 }
 
 //FOR OF: Recorre los elementos de un array o cadena de texto y devuelve el valor de cada elemento.
-//ejemplo de 'for of' en un array
+//ejm 1:
 let libros2 = [
   "Harry Potter",
   "El Señor de los Anillos",
@@ -172,7 +188,13 @@ for (let libro of libros2) {
 //Nota: 'for of' no se usa para Object ya que solo recorre valores de estructuras de datos iterables como el array o string
 
 
-
+//ejm 2:
+let numeros3 = [1, 2, 3, 4, 5, 6];
+for(numeroPar of numeros3){
+    if(numeroPar % 2 === 0){
+        console.log(numeroPar)
+    }
+ }
 
 
 
