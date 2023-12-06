@@ -20,9 +20,9 @@ console.log(array3); //(4) [1, 2, 3, Array(3)]
 /*Recuerda:
 La diferencia entre unir 2 o más Arrays con el 'spread operator' y el metodo push() es la siguiente:
 -Usar el 'spread operator' nos permite que los valores combinados se almacenen en un nuevo array, de esta manera 
-NO ALTERA los valores de los array originales.
+ NO ALTERA los valores de los arrays originales.
 -Usar push() agrega los elementos de un array dentro de otro array existente; con ello estariamos ALTERANDO los 
-valores de uno de los arrays originales. (como el ejm de arriba)
+ valores de uno de los arrays originales. (como el ejm de arriba)
  */
 
 /*3)Para pasar argumentos a una Funcion

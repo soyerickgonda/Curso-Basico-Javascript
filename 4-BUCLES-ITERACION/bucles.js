@@ -147,6 +147,15 @@ console.log(true);
   console.log(false)
 }
 
+//ejm 6: Ejercicio en donde inviertas una palabra (ejm: 'HOLA' --> 'ALOH')
+let palabra = 'mamá';
+let palabraInvertida = ''; //aca se guardara la palabra 'mama' pero al reves 'ámam'
+
+for(i=palabra.length -1; i>=0; i--){
+// console.log(palabra[i]);
+palabraInvertida = palabraInvertida + palabra[i];
+}
+console.log(palabraInvertida);
 
 /*FOR IN:
 En un Array: Recorre los indices (ó posiciones) de los elementos que lo conforman.

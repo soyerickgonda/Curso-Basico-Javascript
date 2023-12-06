@@ -93,12 +93,19 @@ let numeroDecimal = 4.9
 let verdadero = true;
 let falso = false;
 
-/*CASOS ESPECIALES DE DATOS
+/*
+CASOS ESPECIALES DE DATOS
 -undefined: es un tipo de dato sin definir pero que si existe para cualquier programa de programacion
 -null: es un tipo de dato con un valor nulo(vacio)
 -NaN: es un tipo de dato No Numerico
 -BigInt (permite almacenar numeros de grandes cifras, para ello se añade una 'n' al final del valor ---> var valorBigInt = 4n)
+
 */
+
+
+
+
+
 
 /*Datos Compuestos
 Se dice que son compuestos porque son capaces de almacenar muchos datos en una sola variable.*/

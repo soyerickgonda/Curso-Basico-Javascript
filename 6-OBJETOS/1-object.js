@@ -1,9 +1,12 @@
 /*OBJECT{ }
 Es una estructura de datos que permite almacenar propiedades de pares (clave-valor). Cada valor se asocia con una clave única
 dentro del objeto. 
-Recuerda: 
+
+/*::RECUERDA:: 
+-Se considera un "método" a una función que está asociada a un objeto. Cuando defines una función dentro de un objeto, y esa función es una 
+ propiedad del objeto, generalmente se la llama un "método" del objeto.
 -La propiedad de un objeto nunca debe estar vacio, siempre debe tener un valor asignado
-(Nota:Un objeto en JS es conocido en otro lenguaje de programacion como Array asociativo (en PHP se le conoce asi))*/
+ (Nota:Un objeto en JS es conocido en otro lenguaje de programacion como Array asociativo (en PHP se le conoce asi))*/
 
 //FORMAS DE CREAR OBJETOS (existen 2)
 /*1)Usando el constructor Object(): Declaramos una variable cuyo valor sera un new Object; debajo de este empiezas a asignar 
@@ -42,7 +45,6 @@ const objetoDos = {
 console.log(objetoDos["2doNombre"]);
 //Nota: Para acceder a este tipo de propiedades se usa la 'Notacion Corchetes[]', la notacion punto(.) no sera valido
 
-
 //FORMAS DE ACCEDER A LAS PROPIEDADES DE UN OBJETO (existen 3)
 const persona = {
   nombre: "Sergio",
@@ -62,6 +64,8 @@ console.log(persona.residencia.distrito); //Lima Cercado
 //2)Bracket Notation (Notacion con corchetes [])
 console.log(persona["apellido"]); //Martinez
 console.log(persona["residencia"]["pais"]); //Peru
+
+//Nota: Tanto con el dot-notation como con el bracket-notation, podemos crear propiedades a un objeto.
 
 //3)Almacenando el nombre de la propiedad como string dentro de una variable
 let nombreDeLaPropiedad = 'residencia' ;

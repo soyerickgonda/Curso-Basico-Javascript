@@ -106,13 +106,14 @@ document.write(adolph <= omar)//true
 /*Es un operador que tiene 3 operandos. Este operador se usa con frecuencia como atajo para la
 intruccion if*/
 let pais = "Chile";
+
 if (pais == "Chile"){
     console.log("arriba chile");
 } else {
     console.log("arriba otro pais")
 }
 
-//ahora reduciremos la condicion de arriba usando operador ternario
+//ahora reduciremos la condicion de arriba aplicando Operador Ternario
 let country = "Chile";
 let message = country === "Chile" ? "arriba chile" : "arriba otro pais";
 console.log(message);
