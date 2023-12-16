@@ -115,7 +115,7 @@ console.log(sumarElementos); //15...es la sumatoria de todo los numeros dentro d
 //split(): Convierte un String en Array. Deberas especificar entre parentesis el caracter separador entre cada elemento("," ";" "/", etc)
 let string = "hola mundo";
 let convertirAarray = string.split(",");
-console.log(convertirAarray);
+console.log(convertirAarray); //[ 'hola mundo' ]
 
 //join(): Convierte los elementos de un array en un string, separados por el separador que querramos.
 const miArray5 = [1, 2, 3];
@@ -201,7 +201,7 @@ frutas.forEach(function (fruta, indice) {     //recorrera el array retornando el
 let arr = [1, 2, 3, 4, 5]; //array original
 
 arr.forEach(function (valores) {
-  console.log(valores + 1);
+  console.log(valores + 1); //2 3 4 5 6
 });
 
 //ejm 3:

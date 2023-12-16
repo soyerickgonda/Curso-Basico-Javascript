@@ -14,12 +14,11 @@ let cadena2 = "mundo"
 let saludo = cadena.concat(cadena2);
 console.log(saludo);
 
-
 //startsWith(): si una cadena inicia con los caracteres de otra cadena, esto devolvera 'TRUE', caso contrario devolvera 'FALSE'.
 let texto1 = "string de prueba";
 let texto2 = "cadena de prueba";
-let resultado = cadena.startsWith(cadena2);
-console.log(resultado);// false ..si texto2 iniciara con string, el valor seria TRUE
+let resultado = texto2.startsWith(texto1);
+console.log(resultado);// false 
 
 //endsWith: si una cadena termina con los caracteres de otra cadena, el resultado seria 'TRUE', caso contrario devolvera 'FALSE'.
 let texto3 = "string de prueba";
@@ -33,8 +32,8 @@ let resultado3 = texto3.includes(texto4); //true... porque el texto3 incluye una
 //indexOf():devuelve el indice del primer caracter del string. Si no existiera devolvera un -1.
 let user = ("aldo gonzales, jesus gonzales, adolph gonzales");
 let posicion = user.indexOf("gonzales"); 
-console.log(posicion);  // 5...es porque la palabra 'gonzales' inicia en la posicion 5 del string. En caso el indice de la palabra que 
-                        //busquemos no existiera, el resultado seria -1.
+console.log(posicion);  // 5...es porque la palabra 'gonzales' inicia en la posicion 5 del string. 
+                        //En caso el indice de la palabra que buscamos no existiera, el resultado seria -1.
 
 //lastIndexOf():devuelve el ultimo indice del primer caracter del string. Si no existiera devuelve -1.
 let posicion2 = user.lastIndexOf("gonzales"); //38...es la ultima posicion en donde aparece la palabra "gonzales".
@@ -108,4 +107,17 @@ const stringLimpia3 = string3.trimEnd();
 console.log(stringLimpia3); // "¡Hola, mundo!"...se borra solo el espacio que esta al final del "   ¡Hola mundo!".
 console.log(stringLimpia3.length) //17
 
+//charAt():devuelve el caracter de un string segun la posicion que se haya especificado entre ()
+let string4 = "abc";
+let primerCaracter = string4.charAt(0);
+console.log(primerCaracter); // Devolverá "a"
+
+/*slice():se utiliza para extraer una porcion de un string y devolverla como una cadena. Puedes especificar
+la posicion  de inicio y opcionalmente la posicion de finalizacion*/
+let string5 = "abcdefgh";
+let elRestoDelString = string5.slice(1);
+console.log(elRestoDelString); //Devolverá "bcdefgh"
+
+let porcionDelString = string5.slice(1, 4);
+console.log(porcionDelString); // Devolverá "bcd"
 
