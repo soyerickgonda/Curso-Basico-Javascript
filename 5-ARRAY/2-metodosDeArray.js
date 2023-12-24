@@ -6,7 +6,7 @@ Algunos de estos metodos son:
 
 //shift(): Elimina el primer elemento de un array y lo devuelve.
 const miArray3 = [1, 2, 3];
-const elementoEliminado3 = miArray3.shift(); //el elementoEliminado es el #1
+const elementoEliminado3 = miArray3.shift(); //el elemento eliminado es el #1
 console.log(`El array original quedaria asi: ` + miArray3); //[2, 3]..este seria el nuevo array
 
 //pop(): Elimina el último elemento de un array y lo devuelve.
@@ -42,15 +42,14 @@ let numbers = [5, 4, 2, 1, 6, 8, 9, 0, 3, 7];
 numbers.sort();
 console.log(numbers); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]..ordenado de menor a mayor
 
-let animals = ["perro", "gato", "loro", "raton", "conejo", "tigre"];
+let animals = ["dog", "cat", "parrot", "mouse", "rabbit", "tiger"];
 animals.sort();
-console.log(animals); //['conejo', 'gato', 'loro', 'perro', 'raton', 'tigre']..ordenado alfabeticamente
+console.log(animals); //[ 'cat', 'dog', 'mouse', 'parrot', 'rabbit', 'tiger' ]..arranged alphabetically
 
 //splice(): Cambia el contenido de un array pudiendo 'eliminar elementos' existentes y/o 'agregar' unos nuevos.
 let frutas2 = ["manzana", "papaya", "papa", "brocoli", "lechuga"];
 console.log(`El array de frutas era asi: ` + frutas2);
-frutas2.splice(2, 4, "mandarina", "fresa", "arandanos"); //arrancamos desde la posicion 2 y borramos hasta la posicion 4
-//y añadimos 3 elementos nuevos
+frutas2.splice(2, 4, "mandarina", "fresa", "arandanos"); //iniciamos desde la posicion 2 y borramos los elementos hasta la posicion 4 y añadimos 3 elementos nuevos
 console.log(`El array de frutas modificaco quedaria asi: ` + frutas2); //['manzana', 'papaya', 'mandarina', 'fresa', 'arandanos']
 /*Recuerda: 
 -No es necesario eliminar elementos cuando uses splice().
@@ -85,9 +84,9 @@ const todosMayoresQue5 = numeroS.every(function (numero) {
 console.log(todosMayoresQue5); // Devolverá TRUE, ya que todos los elementos son mayores que 5.
 
 //Para comparar si los elementos de un array son todos iguales o diferentes
-let numerosArray = [2, 2, 2, 2, 2];
-let numerosIguales = numerosArray.every(function (numeros, indice, array) {
-  return numeros === array[0];
+const numerosArray = [2, 2, 2, 2, 2];
+const numerosIguales = numerosArray.every(function (numeros, array) {
+  return numeros === 2;
 });
 console.log(numerosIguales); //True.. porque todos los elementos del arrays son iguales
 
