@@ -9,9 +9,9 @@ document.write(longitud + '<br>');
 
 //METODOS DE STRING
 //concat(): se usa para concatenar 2 o mas string y retorna una nueva.
-let cadena = "hola ";
-let cadena2 = "mundo"
-let saludo = cadena.concat(cadena2);
+let string = "hola ";
+let string2 = "mundo"
+let saludo = string.concat(string2);
 console.log(saludo);
 
 //startsWith(): si una cadena inicia con los caracteres de otra cadena, esto devolvera 'TRUE', caso contrario devolvera 'FALSE'.
@@ -96,28 +96,128 @@ console.log(stringLimpia1); //"¡Hola, mundo!"... se borra el espacio que esta a
 console.log(stringLimpia1.length)//13
 
 //trimStart(): Elimina espacios en blanco al principio de una cadena de texto.
-const string2 = "    ¡Hola, mundo!     ";
-const stringLimpia2 = string2.trimStart();
+const string3 = "    ¡Hola, mundo!     ";
+const stringLimpia2 = string3.trimStart();
 console.log(stringLimpia2); // "¡Hola, mundo!"...se borra solo el espacio que esta al inicio del "¡Hola mundo!   ".
 console.log(stringLimpia2.length) //18
 
 //trimEnd(): Elimina espacios en blanco al final de una cadena de texto. 
-const string3 = "    ¡Hola, mundo!     ";
-const stringLimpia3 = string3.trimEnd();
+const string4 = "    ¡Hola, mundo!     ";
+const stringLimpia3 = string4.trimEnd();
 console.log(stringLimpia3); // "¡Hola, mundo!"...se borra solo el espacio que esta al final del "   ¡Hola mundo!".
 console.log(stringLimpia3.length) //17
 
 //charAt():devuelve el caracter de un string segun la posicion que se haya especificado entre ()
-let string4 = "abc";
-let primerCaracter = string4.charAt(0);
+let string5 = "abc";
+let primerCaracter = string5.charAt(0);
 console.log(primerCaracter); // Devolverá "a"
 
 /*slice():se utiliza para extraer una porcion de un string y devolverla como una cadena. Puedes especificar
 la posicion  de inicio y opcionalmente la posicion de finalizacion*/
-let string5 = "abcdefgh";
-let elRestoDelString = string5.slice(1);
+let string6 = "abcdefgh";
+let elRestoDelString = string6.slice(1);
 console.log(elRestoDelString); //Devolverá "bcdefgh"
 
-let porcionDelString = string5.slice(1, 4);
+let porcionDelString = string6.slice(1, 4);
 console.log(porcionDelString); // Devolverá "bcd"
 
+
+/*EXPRESIONES REGULARES
+Son reglas o descripciones utilizadas para encontrar una determinada combinacion de caracteres dentro de un string. 
+Estas 'expresiones regulares' se utilizar principalmente para realizar operaciones de busqueda y manipulacion de string.
+
+HAY 2 FORMAS DE CREAR EXPRESIONES REGULARES: 
+
+1) Usando la funcion constructora del objeto RegExp:
+ejm:
+let ejemplo = new RegExp('Hola Mundo');
+
+RegExp tiene los siguientes metodos para manipular una expresion regular:*/
+/*exec():Obtiene los detalles de la coincidencia
+ejm:*/
+const cadena1 = 'Hello World';  
+const expreReg1 = new RegExp('world','i'); //'i'es un modificador que hace referencia a que es insensible a mayúsculas/minúsculas
+console.log(expreReg1.exec(cadena1)); //['World', index: 6, input: 'Hello World', groups: undefined]
+console.log(expreReg1.exec(cadena1)[0]); //'World'
+
+/*-test():Verifica la existencia de una coincidencia.
+ejm: */
+console.log(expreReg1.test(cadena1)); //true...el valor de 'expreReg1' si existe dentro de 'cadena1'.
+
+/*2) Usando notacion literal (//):
+ejm:
+let ejemplo2 = /'Hola Mundo'/;
+
+La Notacion Literal tiene los siguientes metodos de String para manipular una expresion regular:*/
+//-match():Devuelve un array con las coincidencias encontradas o null si no hay coincidencias.
+const cadena2 = 'hola Mundo, que bello esta el mundo';
+const match = /mundo/gi;
+console.log(cadena2.match(match)); //(2) ['Mundo', 'mundo']
+
+//-matchAll():Devuelve un iterador con todas las coincidencias encontradas.
+const expreReg3 = 'apple es manzana en ingles, Steve Jobs fundo apple';
+const matchAll =  expreReg3.matchAll(/apple/g);
+const conversionAArray = Array.from(matchAll, function (element) {
+    return element[0];
+})
+console.log(conversionAArray);
+
+//-replace():Reemplaza la primera coincidencia encontrada.
+const cadena3 = 'El gato maulla, maullo el gato';
+const replace = cadena3.replace('gato','michi');
+console.log(replace); //El michi maulla, maullo el gato
+
+//-replaceAll():Reemplaza todas las coincidencia encontradas.
+console.log(cadena3.replaceAll('gato', 'michi'));
+
+//-search():Busca una coincidencia y devuelve la posición en la que inicia dicha coincidencia. En caso de no encontrarse devolvera -1.
+const cadena4 = 'hOLA mundo, MUNDO bello';
+console.log(cadena4.search(/mundo/i)); //5...es la posicion en la que inicia la palabra mundo (sin importar si esta en mayus/minusc)
+console.log(cadena4.search(/MUNDO/));  //12...es la posicion en la que inicia la palabra MUNDO (en mayuscula)
+
+//-split(): Divide un string y lo convierte en un array de substrings basado en un separador especificado.
+//>ejm 1:
+const cadena5 = 'la-vida-es-bella';
+console.log(cadena5.split('-'));
+
+//>ejm 2:
+const elementos = 'elemento1  ,elemento2,    elemento3,    elemento4    ';
+console.log(elementos.split(/\s*,\s*/).map(element => element.trim()).filter(Boolean));
+/*En este código, después de usar split(/\s*,\s*), se aplica map(elemento => elemento.trim())
+para eliminar los espacios al principio y al final de cada elemento. Además, se utiliza filter(Boolean)
+para eliminar cualquier elemento vacío resultante.*/
+
+/*source(): Te permite obtener el patron de la expresion regular como una cadena de texto. 
+Este metodo puede usarse tanto con notacion literal (//) ó mediante el constructor RegExp.
+
+>>Nota:cuando se menciona "patrón de una expresión regular", nos referimos a la combinación específica de caracteres
+que estás intentando encontrar mediante esa expresión regular.
+ejm: */
+const cadena6 = /el abecedario tiene 24 letras, abcisa/
+// const source = /abc+/   
+console.log(cadena6.source);
+
+
+/*FLAGS (o modificadores) QUE SE USAN EN LAS EXPRESIONES REGULARES: 
+
+-i (insensible a mayúsculas/minúsculas):
+Permite que la expresión regular haga coincidencias sin tener en cuenta las diferencias entre mayúsculas y minúsculas. 
+(ejemplo: /patrón/i) coincidiría con "Patrón", "PAtRóN", "pATrÓN", etc. 
+
+-g (coincidencia global):
+Busca todas las coincidencias en lugar de detenerse después de encontrar solo la primera. 
+(ejemplo: /patrón/g) buscará todas las instancias de "patrón" en el texto.
+
+-m (coincidencia multilineal):
+Busca las coincidencias al principio y al final de cada linea. Si no se usara 'm' solo se buscara al principio o final 
+de todo el texto.
+
+ejm: */ 
+
+let texto = "Inicio de la línea 1 \nAlgo más en la línea 2 \nInicio de la línea 3 inicio";
+let expresionAlInicio = /^Inicio/gm;
+console.log(texto.match(expresionAlInicio)); //['Inicio', 'Inicio']
+let expresionAlFinal = /Inicio\s*$/gmi;
+console.log(texto.match(expresionAlFinal)); //['inicio']
+/*Nota: si no usaramos el modificador 'm' solo se mostraria el primer elemento Inicio que se encuentre en todo el texto
+(Recuerda: \n se usa para dar saltos de linea)*/
