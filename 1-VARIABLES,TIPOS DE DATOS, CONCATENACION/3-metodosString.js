@@ -197,6 +197,13 @@ const cadena6 = /el abecedario tiene 24 letras, abcisa/
 // const source = /abc+/   
 console.log(cadena6.source);
 
+/*METACARACTERES QUE SE USAN EN LAS EXPRESIONES REGULARES
+Son caracteres que tienen un significado especial en las expresiones regulares.
+Algunos de ellos son:*/
+
+//
+
+
 
 /*FLAGS (o modificadores) QUE SE USAN EN LAS EXPRESIONES REGULARES: 
 
@@ -213,11 +220,12 @@ Busca las coincidencias al principio y al final de cada linea. Si no se usara 'm
 de todo el texto.
 
 ejm: */ 
-
 let texto = "Inicio de la línea 1 \nAlgo más en la línea 2 \nInicio de la línea 3 inicio";
+
 let expresionAlInicio = /^Inicio/gm;
 console.log(texto.match(expresionAlInicio)); //['Inicio', 'Inicio']
-let expresionAlFinal = /Inicio\s*$/gmi;
+
+let expresionAlFinal = /Inicio\s*$/gmi; //'\s*' busca cero o más caracteres de espacio en blanco justo antes del final de cada linea de texto
 console.log(texto.match(expresionAlFinal)); //['inicio']
 /*Nota: si no usaramos el modificador 'm' solo se mostraria el primer elemento Inicio que se encuentre en todo el texto
 (Recuerda: \n se usa para dar saltos de linea)*/
